@@ -1,0 +1,148 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..5367eb237712d045579ef7998f1a563725891889
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,139 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Luke E. DeThorne - Purdue University</title>
++  <link rel="stylesheet" href="assets/css/styles.css" />
++  <link rel="preconnect" href="https://fonts.googleapis.com" />
++  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
++  <link
++    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
++    rel="stylesheet"
++  />
++</head>
++<body>
++  <div class="page">
++    <header class="site-header">
++      <div class="header-inner">
++        <img src="https://www.purdue.edu/purdue/images/brand-assets/trademarks-logos/university.png" alt="Purdue University Logo" class="purdue-logo" />
++        <div class="header-text">
++          <h1>Luke E. DeThorne</h1>
++          <p class="subtitle">Department of Mathematics · Purdue University</p>
++          <p class="contact-info">
++            Office: MATH 444 · Email: <a href="mailto:ledt@purdue.edu">ledt@purdue.edu</a>
++          </p>
++        </div>
++      </div>
++    </header>
++
++    <div class="content-wrapper">
++      <nav class="sidebar">
++        <h2>Quick Links</h2>
++        <ul>
++          <li><a href="#about">About</a></li>
++          <li><a href="#teaching">Teaching</a></li>
++          <li><a href="#research">Research</a></li>
++          <li><a href="#publications">Publications</a></li>
++          <li><a href="#students">For Students</a></li>
++        </ul>
++      </nav>
++
++      <main class="main-content">
++        <section id="about">
++          <h2>About</h2>
++          <p>
++            Welcome to my academic homepage. I am an Associate Professor of Mathematics at Purdue University. My
++            research focuses on algebraic geometry and its interactions with combinatorics and representation theory.
++            I am particularly interested in the geometry of moduli spaces and applications to enumerative problems.
++          </p>
++          <p>
++            Outside of research and teaching, I am involved in organizing several departmental outreach activities and
++            mentoring undergraduate research groups through the PRiME program.
++          </p>
++        </section>
++
++        <section id="teaching">
++          <h2>Teaching</h2>
++          <article class="course">
++            <h3>Fall 2024 · MA 55300 — Abstract Algebra I</h3>
++            <ul>
++              <li>Lecture: MWF 9:30–10:20 AM, MATH 175</li>
++              <li>Office Hours: Tue 2:00–4:00 PM &amp; Thu 10:30–11:30 AM, MATH 444</li>
++              <li>
++                Course materials and homework will be posted on <a href="https://brightspace.purdue.edu/" target="_blank" rel="noopener">Brightspace</a>.
++              </li>
++            </ul>
++          </article>
++          <article class="course">
++            <h3>Spring 2024 · MA 34100 — Foundations Analysis</h3>
++            <ul>
++              <li>Lecture: TTh 1:30–2:45 PM, MATH 171</li>
++              <li>Office Hours: Wed 3:00–5:00 PM, MATH 444</li>
++              <li>
++                Notes and assignments remain available in the <a href="#archive">course archive</a>.
++              </li>
++            </ul>
++          </article>
++        </section>
++
++        <section id="research">
++          <h2>Research</h2>
++          <p>
++            My research is motivated by understanding moduli of higher-dimensional varieties and their birational
++            geometry. Recent projects include studying wall-crossing phenomena for Bridgeland stability conditions and
++            applications of tropical methods to questions in enumerative geometry.
++          </p>
++          <p>
++            If you are interested in collaborating, please reach out via email. I am always eager to talk with students
++            and colleagues about related problems and new ideas.
++          </p>
++        </section>
++
++        <section id="publications">
++          <h2>Selected Publications</h2>
++          <ul class="publication-list">
++            <li>
++              <span class="pub-title">Stability conditions and birational geometry of moduli spaces</span><br />
++              <span class="pub-venue">Advances in Mathematics, 2024 (with J. Smith)</span>
++            </li>
++            <li>
++              <span class="pub-title">Tropical approaches to enumerative problems</span><br />
++              <span class="pub-venue">Journal of Algebraic Geometry, 2023</span>
++            </li>
++            <li>
++              <span class="pub-title">Derived categories of Fano varieties</span><br />
++              <span class="pub-venue">Transactions of the AMS, 2022</span>
++            </li>
++          </ul>
++        </section>
++
++        <section id="students">
++          <h2>For Students</h2>
++          <p>
++            Prospective graduate students interested in algebraic geometry are encouraged to reach out early with their
++            background and interests. Undergraduates can find information about research opportunities through the
++            <a href="https://www.math.purdue.edu/academic/ugrad/research/" target="_blank" rel="noopener">Department of Mathematics</a>.
++          </p>
++          <p>
++            For reference, here are some useful documents:
++          </p>
++          <ul class="resource-list">
++            <li><a href="#">Graduate advising syllabus (PDF)</a></li>
++            <li><a href="#">Undergraduate research expectations</a></li>
++            <li><a href="#">Recommendation letter request form</a></li>
++          </ul>
++        </section>
++      </main>
++    </div>
++
++    <footer class="site-footer">
++      <p>&copy; <span id="year"></span> Luke E. DeThorne · Purdue University Department of Mathematics</p>
++    </footer>
++  </div>
++
++  <script>
++    document.getElementById('year').textContent = new Date().getFullYear();
++  </script>
++</body>
++</html> 
+EOF
+)
