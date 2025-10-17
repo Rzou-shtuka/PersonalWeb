@@ -1,148 +1,210 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-new file mode 100644
-index 0000000000000000000000000000000000000000..5367eb237712d045579ef7998f1a563725891889
---- /dev/null
-+++ b/index.html
-@@ -0,0 +1,139 @@
-+<!DOCTYPE html>
-+<html lang="en">
-+<head>
-+  <meta charset="UTF-8" />
-+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-+  <title>Luke E. DeThorne - Purdue University</title>
-+  <link rel="stylesheet" href="assets/css/styles.css" />
-+  <link rel="preconnect" href="https://fonts.googleapis.com" />
-+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-+  <link
-+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
-+    rel="stylesheet"
-+  />
-+</head>
-+<body>
-+  <div class="page">
-+    <header class="site-header">
-+      <div class="header-inner">
-+        <img src="https://www.purdue.edu/purdue/images/brand-assets/trademarks-logos/university.png" alt="Purdue University Logo" class="purdue-logo" />
-+        <div class="header-text">
-+          <h1>Luke E. DeThorne</h1>
-+          <p class="subtitle">Department of Mathematics · Purdue University</p>
-+          <p class="contact-info">
-+            Office: MATH 444 · Email: <a href="mailto:ledt@purdue.edu">ledt@purdue.edu</a>
-+          </p>
-+        </div>
-+      </div>
-+    </header>
-+
-+    <div class="content-wrapper">
-+      <nav class="sidebar">
-+        <h2>Quick Links</h2>
-+        <ul>
-+          <li><a href="#about">About</a></li>
-+          <li><a href="#teaching">Teaching</a></li>
-+          <li><a href="#research">Research</a></li>
-+          <li><a href="#publications">Publications</a></li>
-+          <li><a href="#students">For Students</a></li>
-+        </ul>
-+      </nav>
-+
-+      <main class="main-content">
-+        <section id="about">
-+          <h2>About</h2>
-+          <p>
-+            Welcome to my academic homepage. I am an Associate Professor of Mathematics at Purdue University. My
-+            research focuses on algebraic geometry and its interactions with combinatorics and representation theory.
-+            I am particularly interested in the geometry of moduli spaces and applications to enumerative problems.
-+          </p>
-+          <p>
-+            Outside of research and teaching, I am involved in organizing several departmental outreach activities and
-+            mentoring undergraduate research groups through the PRiME program.
-+          </p>
-+        </section>
-+
-+        <section id="teaching">
-+          <h2>Teaching</h2>
-+          <article class="course">
-+            <h3>Fall 2024 · MA 55300 — Abstract Algebra I</h3>
-+            <ul>
-+              <li>Lecture: MWF 9:30–10:20 AM, MATH 175</li>
-+              <li>Office Hours: Tue 2:00–4:00 PM &amp; Thu 10:30–11:30 AM, MATH 444</li>
-+              <li>
-+                Course materials and homework will be posted on <a href="https://brightspace.purdue.edu/" target="_blank" rel="noopener">Brightspace</a>.
-+              </li>
-+            </ul>
-+          </article>
-+          <article class="course">
-+            <h3>Spring 2024 · MA 34100 — Foundations Analysis</h3>
-+            <ul>
-+              <li>Lecture: TTh 1:30–2:45 PM, MATH 171</li>
-+              <li>Office Hours: Wed 3:00–5:00 PM, MATH 444</li>
-+              <li>
-+                Notes and assignments remain available in the <a href="#archive">course archive</a>.
-+              </li>
-+            </ul>
-+          </article>
-+        </section>
-+
-+        <section id="research">
-+          <h2>Research</h2>
-+          <p>
-+            My research is motivated by understanding moduli of higher-dimensional varieties and their birational
-+            geometry. Recent projects include studying wall-crossing phenomena for Bridgeland stability conditions and
-+            applications of tropical methods to questions in enumerative geometry.
-+          </p>
-+          <p>
-+            If you are interested in collaborating, please reach out via email. I am always eager to talk with students
-+            and colleagues about related problems and new ideas.
-+          </p>
-+        </section>
-+
-+        <section id="publications">
-+          <h2>Selected Publications</h2>
-+          <ul class="publication-list">
-+            <li>
-+              <span class="pub-title">Stability conditions and birational geometry of moduli spaces</span><br />
-+              <span class="pub-venue">Advances in Mathematics, 2024 (with J. Smith)</span>
-+            </li>
-+            <li>
-+              <span class="pub-title">Tropical approaches to enumerative problems</span><br />
-+              <span class="pub-venue">Journal of Algebraic Geometry, 2023</span>
-+            </li>
-+            <li>
-+              <span class="pub-title">Derived categories of Fano varieties</span><br />
-+              <span class="pub-venue">Transactions of the AMS, 2022</span>
-+            </li>
-+          </ul>
-+        </section>
-+
-+        <section id="students">
-+          <h2>For Students</h2>
-+          <p>
-+            Prospective graduate students interested in algebraic geometry are encouraged to reach out early with their
-+            background and interests. Undergraduates can find information about research opportunities through the
-+            <a href="https://www.math.purdue.edu/academic/ugrad/research/" target="_blank" rel="noopener">Department of Mathematics</a>.
-+          </p>
-+          <p>
-+            For reference, here are some useful documents:
-+          </p>
-+          <ul class="resource-list">
-+            <li><a href="#">Graduate advising syllabus (PDF)</a></li>
-+            <li><a href="#">Undergraduate research expectations</a></li>
-+            <li><a href="#">Recommendation letter request form</a></li>
-+          </ul>
-+        </section>
-+      </main>
-+    </div>
-+
-+    <footer class="site-footer">
-+      <p>&copy; <span id="year"></span> Luke E. DeThorne · Purdue University Department of Mathematics</p>
-+    </footer>
-+  </div>
-+
-+  <script>
-+    document.getElementById('year').textContent = new Date().getFullYear();
-+  </script>
-+</body>
-+</html> 
-EOF
-)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruipeng Zou</title>
+  <meta name="description" content="Personal academic website of Ruipeng Zou." />
+  <style>
+    :root{
+      --maxw: 860px;
+      --accent: #003B5C; /* Purdue blue-ish */
+      --muted: #666;
+      --rule: #e5e5e5;
+    }
+    html{box-sizing:border-box}
+    *,*:before,*:after{box-sizing:inherit}
+    body{
+      margin:0; font: 16px/1.6 Georgia, "Times New Roman", Times, serif; color:#111;
+      background:#fff;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:24px 18px 64px}
+
+    header{display:flex; gap:24px; align-items:center; margin-bottom:8px}
+    .headshot{width:110px; height:110px; border-radius:6px; object-fit:cover; border:1px solid var(--rule)}
+    .title{flex:1}
+    h1{font-size:2rem; line-height:1.2; margin:0}
+    .subtitle{color:var(--muted)}
+    .meta{margin-top:6px; font-size:0.98rem}
+
+    nav{margin:12px 0 20px; padding:8px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+    nav .links{display:flex; flex-wrap:wrap; gap:14px; font-size:0.98rem}
+
+    section{margin:28px 0}
+    section h2{font-size:1.4rem; margin:0 0 8px}
+    hr{border:0; height:1px; background:var(--rule); margin:24px 0}
+
+    /* Publication lists */
+    .pubs{list-style:none; padding:0; margin:0}
+    .pub{margin:12px 0 18px}
+    .pub-title{font-style:italic}
+    .pub-meta{color:var(--muted); font-size:0.95rem}
+    details{margin-top:4px}
+    details summary{cursor:pointer; user-select:none; display:inline-block; color:var(--accent)}
+    /* show +/- like the example site */
+    details summary::after{content:"  [+]"; color:var(--muted)}
+    details[open] summary::after{content:"  [\2212]"} /* en dash minus */
+    details > div{padding:8px 12px; border-left:3px solid var(--rule); background:#fafafa}
+
+    /* Teaching table */
+    table{border-collapse:collapse; width:100%}
+    th, td{padding:8px 10px; border-bottom:1px solid var(--rule); text-align:left}
+    th{background:#fafafa}
+
+    footer{margin-top:40px; color:var(--muted); font-size:0.9rem}
+
+    @media (max-width:560px){
+      header{align-items:flex-start}
+      .headshot{width:84px; height:84px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <!-- Replace headshot.jpg with your photo file name (110×110 suggested) -->
+      <img class="headshot" src="headshot.jpg" alt="Ruipeng Zou headshot" />
+      <div class="title">
+        <h1>Ruipeng Zou</h1>
+        <div class="subtitle">Ph.D. Student</div>
+        <div class="meta">
+          <a href="https://www.math.purdue.edu/" target="_blank" rel="noopener">Department of Mathematics</a>,
+          <a href="https://www.purdue.edu/" target="_blank" rel="noopener">Purdue University</a><br/>
+          Office: (e.g.) MATH 6xx &nbsp;·&nbsp; Email: <span style="white-space:nowrap">firstname&nbsp;[at]&nbsp;purdue&nbsp;[dot]&nbsp;edu</span>
+        </div>
+      </div>
+    </header>
+
+    <nav aria-label="Section navigation">
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#submitted">Submitted</a>
+        <a href="#preprints">Preprints</a>
+        <a href="#journals">Journal articles</a>
+        <a href="#teaching">Teaching</a>
+        <a href="cv.pdf">CV (pdf)</a>
+      </div>
+    </nav>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a mathematician interested in algebraic geometry, number theory, and representation theory.
+        My current work involves the mod <em>p</em> Langlands program, Deligne&ndash;Lusztig theory, and
+        related questions at the interface of arithmetic geometry and representation theory.
+      </p>
+      <p>
+        Previously, I studied at <a href="https://www.purdue.edu/" target="_blank" rel="noopener">Purdue University</a>.
+        My CV is available <a href="cv.pdf">here</a>.
+      </p>
+    </section>
+
+    <hr />
+
+    <section id="submitted">
+      <h2>Submitted articles</h2>
+      <ol class="pubs">
+        <li class="pub">
+          <div class="pub-title"><a href="#">Title of a submitted paper</a></div>
+          <div class="pub-meta">with A. Coauthor and B. Coauthor. Submitted, 2025. 25 pages.</div>
+          <details>
+            <summary>Abstract</summary>
+            <div>
+              Short abstract goes here. Under some technical assumptions of a global nature, we study ...
+            </div>
+          </details>
+        </li>
+        <li class="pub">
+          <div class="pub-title"><a href="#">Another submitted paper</a></div>
+          <div class="pub-meta">with C. Name. Submitted, 2024. 12 pages.</div>
+          <details>
+            <summary>Abstract</summary>
+            <div>
+              Replace this with your abstract. You can include mathematics rendered as plain text or via images.
+            </div>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <section id="preprints">
+      <h2>Preprints</h2>
+      <ol class="pubs">
+        <li class="pub">
+          <div class="pub-title"><a href="#">Weight cycling and supersingular representations</a></div>
+          <div class="pub-meta">Preprint. 2017. 7 pages.</div>
+          <details>
+            <summary>Abstract</summary>
+            <div>
+              A concise description of the result and context.
+            </div>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <section id="journals">
+      <h2>Journal articles</h2>
+      <ol class="pubs">
+        <li class="pub">
+          <div class="pub-title"><a href="#">Colength one deformation rings</a></div>
+          <div class="pub-meta">To appear in Transactions of the AMS. 34 pages.</div>
+          <details>
+            <summary>Abstract</summary>
+            <div>
+              Brief abstract or summary for general audiences. Link the arXiv or journal page above.
+            </div>
+          </details>
+        </li>
+        <li class="pub">
+          <div class="pub-title"><a href="#">Local models for Galois deformation rings and applications</a></div>
+          <div class="pub-meta">Inventiones Mathematicae 231 (2023), no. 3, 1277&ndash;1488.</div>
+          <details>
+            <summary>Abstract</summary>
+            <div>
+              Outline the main contributions and any notable theorems.
+            </div>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <table>
+        <thead>
+          <tr><th>Term</th><th>Course</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fall 2025</td>
+            <td><a href="#">MA&nbsp;5xx: Topic Name</a></td>
+            <td>Office hours Tue 2&ndash;4pm, MATH 6xx.</td>
+          </tr>
+          <tr>
+            <td>Spring 2025</td>
+            <td><a href="#">MA&nbsp;xxx: Another Course</a></td>
+            <td>TAs, syllabus, homework, etc.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <div>&copy; <span id="y"></span> Ruipeng Zou &middot; Last updated <span id="d"></span></div>
+    </footer>
+  </div>
+
+  <script>
+    // Simple last-updated stamps
+    (function(){
+      var d = new Date();
+      document.getElementById('y').textContent = d.getFullYear();
+      document.getElementById('d').textContent = d.toISOString().slice(0,10);
+    })();
+  </script>
+</body>
+</html>
+
