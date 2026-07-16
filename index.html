@@ -166,14 +166,12 @@ I am advised by Professor <a href="https://www.math.purdue.edu/~ledt/" target="_
     </footer>
   </div>
 
-  <script>
-    // Simple last-updated stamps
-    (function(){
-      var d = new Date();
-      document.getElementById('y').textContent = d.getFullYear();
-      document.getElementById('d').textContent = d.toISOString().slice(0,10);
-    })();
-  </script>
+<script>
+  (function () {
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('d').textContent = '2026-07-16';
+  })();
+</script>
 </body>
 </html>
 
